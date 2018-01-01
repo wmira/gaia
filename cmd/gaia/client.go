@@ -24,7 +24,8 @@ import (
 // clientCmd is the entry point for this binary
 var clientCmd = &cobra.Command{
 	Use:   "client",
-	Short: "Gaia light client",
+	Short: "gaia light client CLI tool",
+	Long:  "gaia light client CLI tool",
 	Run: func(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	},
@@ -93,5 +94,4 @@ func prepareClientCommands() {
 		commits.RootCmd,
 		lineBreak,
 	)
-
 }

@@ -33,22 +33,26 @@ const (
 var (
 	CmdDeclareCandidacy = &cobra.Command{
 		Use:   "declare-candidacy",
-		Short: "create new validator-candidate account and delegate some coins to it",
+		Short: "create a new validator-candidate account and delegate some coins to it",
+		Long:  "create a new validator-candidate account and delegate some coins to it",
 		RunE:  cmdDeclareCandidacy,
 	}
 	CmdEditCandidacy = &cobra.Command{
 		Use:   "edit-candidacy",
-		Short: "edit and existing validator-candidate account",
+		Short: "edit an existing validator-candidate account",
+		Long:  "edit an existing validator-candidate account",
 		RunE:  cmdEditCandidacy,
 	}
 	CmdDelegate = &cobra.Command{
 		Use:   "delegate",
 		Short: "delegate coins to an existing validator/candidate",
+		Long:  "delegate coins to an existing validator/candidate",
 		RunE:  cmdDelegate,
 	}
 	CmdUnbond = &cobra.Command{
 		Use:   "unbond",
 		Short: "unbond coins from a validator/candidate",
+		Long:  "unbond coins from a validator/candidate",
 		RunE:  cmdUnbond,
 	}
 )
@@ -57,13 +61,13 @@ func init() {
 
 	// define the flags
 	fsPk := flag.NewFlagSet("", flag.ContinueOnError)
-	fsPk.String(FlagPubKey, "", "PubKey of the validator-candidate")
+	fsPk.String(FlagPubKey, "", "pubkey of the validator-candidate")
 
 	fsAmount := flag.NewFlagSet("", flag.ContinueOnError)
-	fsAmount.String(FlagAmount, "1fermion", "Amount of coins to bond")
+	fsAmount.String(FlagAmount, "1fermion", "amount of coins to bond")
 
 	fsShares := flag.NewFlagSet("", flag.ContinueOnError)
-	fsShares.String(FlagShares, "", "Amount of shares to unbond, either in decimal or keyword MAX (ex. 1.23456789, 99, MAX)")
+	fsShares.String(FlagShares, "", "amount of shares to unbond, either in decimal or keyword MAX (ex. 1.23456789, 99, MAX)")
 
 	fsCandidate := flag.NewFlagSet("", flag.ContinueOnError)
 	fsCandidate.String(FlagMoniker, "", "validator-candidate name")

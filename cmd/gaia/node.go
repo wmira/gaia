@@ -23,7 +23,8 @@ import (
 // nodeCmd is the entry point for this binary
 var nodeCmd = &cobra.Command{
 	Use:   "node",
-	Short: "The Cosmos Network delegation-game blockchain test",
+	Short: "run a gaia node",
+	Long:  "run a gaia node; under the hood, this runs Tendermint Core",
 	Run:   func(cmd *cobra.Command, args []string) { cmd.Help() },
 }
 

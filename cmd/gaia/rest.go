@@ -26,7 +26,7 @@ var (
 	restServerCmd = &cobra.Command{
 		Use:   "rest-server",
 		Short: "REST client for gaia commands",
-		Long:  `Gaiaserver presents  a nice (not raw hex) interface to the gaia blockchain structure.`,
+		Long:  "REST client for gaia commands; used by the Javascript UI",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return cmdRestServer(cmd, args)
 		},

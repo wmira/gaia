@@ -15,7 +15,8 @@ import (
 var (
 	GaiaCmd = &cobra.Command{
 		Use:   "gaia",
-		Short: "The Cosmos Network delegation-game test",
+		Short: "the Cosmos Network validator tooling",
+		Long:  "the Cosmos Network validator tooling",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.Help()
 		},

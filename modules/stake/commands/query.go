@@ -18,26 +18,30 @@ import (
 var (
 	CmdQueryCandidates = &cobra.Command{
 		Use:   "candidates",
-		Short: "Query for the set of validator-candidates pubkeys",
+		Short: "query for the set of validator-candidates pubkeys",
+		Long:  "query for the set of validator-candidates pubkeys",
 		RunE:  cmdQueryCandidates,
 	}
 
 	CmdQueryCandidate = &cobra.Command{
 		Use:   "candidate",
-		Short: "Query a validator-candidate account",
+		Short: "query a validator-candidate account",
+		Long:  "query a validator-candidate account",
 		RunE:  cmdQueryCandidate,
 	}
 
 	CmdQueryDelegatorBond = &cobra.Command{
 		Use:   "delegator-bond",
-		Short: "Query a delegators bond based on address and candidate pubkey",
+		Short: "query a delegators bond based on address and candidate pubkey",
+		Long:  "query a delegators bond based on address and candidate pubkey",
 		RunE:  cmdQueryDelegatorBond,
 	}
 
 	CmdQueryDelegatorCandidates = &cobra.Command{
 		Use:   "delegator-candidates",
+		Short: "query all delegators candidates' pubkeys based on address",
+		Long:  "query all delegators candidates' pubkeys based on address",
 		RunE:  cmdQueryDelegatorCandidates,
-		Short: "Query all delegators candidates' pubkeys based on address",
 	}
 
 	FlagDelegatorAddress = "delegator-address"
@@ -46,9 +50,9 @@ var (
 func init() {
 	//Add Flags
 	fsPk := flag.NewFlagSet("", flag.ContinueOnError)
-	fsPk.String(FlagPubKey, "", "PubKey of the validator-candidate")
+	fsPk.String(FlagPubKey, "", "pubkey of the validator-candidate")
 	fsAddr := flag.NewFlagSet("", flag.ContinueOnError)
-	fsAddr.String(FlagDelegatorAddress, "", "Delegator Hex Address")
+	fsAddr.String(FlagDelegatorAddress, "", "delegator hex address")
 
 	CmdQueryCandidate.Flags().AddFlagSet(fsPk)
 	CmdQueryDelegatorBond.Flags().AddFlagSet(fsPk)
