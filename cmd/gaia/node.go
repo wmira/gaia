@@ -24,7 +24,7 @@ import (
 var nodeCmd = &cobra.Command{
 	Use:   "node",
 	Short: "run a gaia node",
-	Long:  "run a gaia node; under the hood, this runs Tendermint Core",
+	Long:  "run a gaia node",
 	Run:   func(cmd *cobra.Command, args []string) { cmd.Help() },
 }
 
