@@ -30,8 +30,8 @@ To do this first generate a new key:
 
 ```
 MYNAME=<your name>
-gaiacli keys new $MYNAME
-gaiacli keys list
+gaia client keys new $MYNAME
+gaia client keys list
 MYADDR=<your newly generated address>
 ```
 
